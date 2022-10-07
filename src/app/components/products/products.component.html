@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div>
+    <div class="row">
+      <label for="" class="mb-2">Category: </label>
+      <div class="col-lg-3 col-md-6 col-12">
+        <select
+          class="form-control"
+          name="categories"
+          id="cats"
+          [(ngModel)]="selectedCategoryId"
+        >
+          <option *ngFor="let category of categories" [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+        <div>Selected Category : {{ selectedCategoryId }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      *ngFor="let product of productsList"
+      class="col-lg-3 col-md-4 col-6 mb-3"
+      [class.d-none]="selectedCategoryId != product.categoryId"
+    >
+      <div class="card">
+        <img
+          appBorderBox="yellow"
+          [src]="product.imageUrl"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.productDescription }}></p>
+        </div>
+        <div class="price ps-3 fw-semibold">Price: {{ product.price }}</div>
+        <div class="card-body container">
+          <div class="row">
+            <input
+              type="number"
+              class="form-control text-center col p-1 me-1"
+              placeholder="In Cart"
+              #itemCount
+            />
+            <button class="btn btn-info col p-1 ms-1">Add to Cart</button>
+            <button
+              class="btn btn-success col-12 w-80 mt-2"
+              (click)="Buy(product.price, +itemCount.value)"
+            >
+              Buy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div>
+    <label for="" class="mb-2">Category: </label>
+    <select
+      class="form-control"
+      name="categories"
+      id="cats"
+      [(ngModel)]="selectedCategoryId"
+    >
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+    <div>Selected Category : {{ selectedCategoryId }}</div>
+  </div> -->
+</div>
