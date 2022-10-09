@@ -9,7 +9,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 // import { ICategory } from 'src/app/interfaces/icategory';
-import { IProduct } from 'src/app/interfaces/iproduct';
+import { IProduct } from '../../interfaces/iproduct';
 
 @Component({
   selector: 'app-products',
@@ -30,6 +30,7 @@ export class ProductsComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.categoryFilter = this.ProductsService.getAllProducts();
+
   }
   ngOnChanges(): void {
     this.categoryFilter = this.ProductsService.filterProductsByCategory(
@@ -41,6 +42,7 @@ export class ProductsComponent implements OnInit, OnChanges {
     // console.log(typeof price, typeof count);
     this.totalPrice += price * count;
     this.totalPriceEmitter.emit(this.totalPrice);
+    console.log("Hello")
 
     console.log(this.totalPrice);
   }
