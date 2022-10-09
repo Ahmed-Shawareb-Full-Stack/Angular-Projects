@@ -1,31 +1,13 @@
 <div class="container-fluid">
-  <div>
-    <div class="row">
-      <label for="" class="mb-2">Category: </label>
-      <div class="col-lg-3 col-md-6 col-12">
-        <select
-          class="form-control"
-          name="categories"
-          id="cats"
-          [(ngModel)]="selectedCategoryId"
-        >
-          <option *ngFor="let category of categories" [value]="category.id">
-            {{ category.name }}
-          </option>
-        </select>
-        <div>Selected Category : {{ selectedCategoryId }}</div>
-      </div>
-    </div>
-  </div>
   <div class="row">
     <div
-      *ngFor="let product of productsList"
+      *ngFor="let product of categoryFilter"
       class="col-lg-3 col-md-4 col-6 mb-3"
-      [class.d-none]="selectedCategoryId != product.categoryId"
     >
       <div class="card">
         <img
           appBorderBox="yellow"
+          hoverColor="green"
           [src]="product.imageUrl"
           class="card-img-top img-fluid"
           alt="..."
@@ -55,18 +37,4 @@
       </div>
     </div>
   </div>
-  <!-- <div>
-    <label for="" class="mb-2">Category: </label>
-    <select
-      class="form-control"
-      name="categories"
-      id="cats"
-      [(ngModel)]="selectedCategoryId"
-    >
-      <option *ngFor="let category of categories" [value]="category.id">
-        {{ category.name }}
-      </option>
-    </select>
-    <div>Selected Category : {{ selectedCategoryId }}</div>
-  </div> -->
 </div>

@@ -8,6 +8,7 @@ import { MainComponent } from './components/main/main.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products/products.component';
 import { BorderBoxDirective } from './directives/border-box.directive';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BorderBoxDirective } from './directives/border-box.directive';
     MainComponent,
     ProductsComponent,
     BorderBoxDirective,
+    OrderComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
