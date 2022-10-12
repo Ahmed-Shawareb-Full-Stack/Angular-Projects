@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products/products.component';
 import { BorderBoxDirective } from './directives/border-box.directive';
 import { OrderComponent } from './components/order/order.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,10 @@ import { OrderComponent } from './components/order/order.component';
     ProductsComponent,
     BorderBoxDirective,
     OrderComponent,
+    PageNotFoundComponent,
+    ProductDetailsComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

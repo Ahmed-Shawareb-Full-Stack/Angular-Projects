@@ -5,7 +5,7 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
       >
         <a
-          href="/"
+          routerLink="/"
           class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
         >
           <img
@@ -13,7 +13,7 @@
             alt=""
             class="img-fluid me-2"
             width="60"
-            height="60" 
+            height="60"
           />
         </a>
 
@@ -21,19 +21,13 @@
           class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
         >
           <li>
-            <a href="#" class="nav-link text-secondary">
+            <a routerLink="/main" class="nav-link text-white">
               <i class="fa-solid fa-house d-block mx-auto mb-1 fs-4"></i>
               Home
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-chart-line d-block mx-auto mb-1 fs-4"></i>
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
+            <a routerLink="/order" class="nav-link text-white">
               <i
                 class="fa-regular fa-calendar-days d-block mx-auto mb-1 fs-4"
               ></i>
@@ -41,15 +35,9 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-grip d-block mx-auto mb-1 fs-4"></i>
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-user d-block mx-auto mb-1 fs-4"></i>
-              Customers
+            <a routerLink="/products" class="nav-link text-white">
+              <i class="fa-solid fa-chart-line d-block mx-auto mb-1 fs-4"></i>
+              Dashboard
             </a>
           </li>
         </ul>

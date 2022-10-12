@@ -19,12 +19,20 @@
         <div class="price ps-3 fw-semibold">Price: {{ product.price }}</div>
         <div class="card-body container">
           <div class="row">
+            <button
+              class="btn btn-warning col-12 w-80 mb-2"
+              (click)="productDetails(product.id)"
+              [routerLink]="['/products', product.id]"
+            >
+              Details
+            </button>
             <input
               type="number"
               class="form-control text-center col p-1 me-1"
               placeholder="In Cart"
               #itemCount
             />
+
             <button class="btn btn-info col p-1 ms-1">Add to Cart</button>
             <button
               class="btn btn-success col-12 w-80 mt-2"

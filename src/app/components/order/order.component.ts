@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ProductsComponent } from './../products/products.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ICategory } from 'src/app/interfaces/icategory';
 
 @Component({
@@ -10,7 +11,7 @@ export class OrderComponent implements OnInit {
   categories: ICategory[];
   RecivedTotalPrice: number = 0;
   ParenteslectedCatID: number = 0;
-
+  @ViewChild(ProductsComponent) productListComponent!: ProductsComponent;
   constructor() {
     this.categories = [
       { id: 1, name: 'laptop' },
@@ -23,4 +24,6 @@ export class OrderComponent implements OnInit {
   onTotalPriceChanged(total: number): void {
     this.RecivedTotalPrice = total;
   }
+
+  
 }

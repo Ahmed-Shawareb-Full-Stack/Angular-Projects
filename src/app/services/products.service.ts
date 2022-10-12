@@ -1,5 +1,5 @@
+import { IProduct } from './../interfaces/iproduct';
 import { Injectable } from '@angular/core';
-import { IProduct } from '../interfaces/iproduct';
 
 @Injectable({
   providedIn: 'root',
@@ -68,10 +68,12 @@ export class ProductsService {
     return this.productsList;
   }
   filterProductsByCategory(selectedCategoryId: number): IProduct[] {
-    console.log(selectedCategoryId);
-    if ((selectedCategoryId = 0)) {
+    // console.log(selectedCategoryId);
+    if (selectedCategoryId == 0) {
+      // console.log(selectedCategoryId);
       return this.productsList;
     } else {
+      // console.log(selectedCategoryId);
       return this.productsList.filter(
         (product) => product.categoryId == selectedCategoryId
       );
@@ -81,6 +83,8 @@ export class ProductsService {
     let resultProduct = this.productsList.find(
       (product) => product.id == productId
     );
+    // console.log(resultProduct);
     return resultProduct ? resultProduct : null;
   }
 }
+

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="card col-4">
+      <img
+        appBorderBox="yellow"
+        hoverColor="green"
+        [src]="product?.imageUrl"
+        class="card-img-top img-fluid"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product?.name }}</h5>
+        <p class="card-text">{{ product?.productDescription }}></p>
+      </div>
+      <div class="price ps-3 fw-semibold">Price: {{ product?.price }}</div>
+    </div>
+  </div>
+</div>
